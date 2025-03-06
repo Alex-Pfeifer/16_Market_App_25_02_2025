@@ -60,7 +60,7 @@ const stock = {
         return;
       } else if (itemQuantity < this.items[existItemIndex].quantity) {
         this.items[existItemIndex].quantity -= itemQuantity;
-        // updateProductInDom(this.items[existItemIndex]);
+        updateProductInDom(this.items[existItemIndex]);
       } else if (itemQuantity === this.items[existItemIndex].quantity) {
         this.items.splice(existItemIndex, 1);
         // deleteProductFromDom(this.items[existItemIndex].name);
@@ -206,6 +206,8 @@ function addProductToDom(item) {
       <strong>${item.price}</strong> 
       <strong id="quantity-${item.name}">(${item.quantity} шт.)</strong>
     </span>
+    <button class="btn btn-danger" onclick="stock.removeItem('${item.name}', ${1})">-</button>
+    <button id="plusBtn-${item.name}" class="btn btn-danger">+</button>
     <button id="deleteBtn-${item.name}" class="btn btn-danger" onclick="stock.removeItem('${item.name}', ${item.quantity})">Delete</button>
   `;
   // Второй способ решения действия, связанного с удалением элемента списка
@@ -218,11 +220,15 @@ function addProductToDom(item) {
 
   // 2. Получаем ссылку по id
   // const deleteBtn = document.getElementById(`deleteBtn-${item.name}`);
+  const plusBtn = document.getElementById(`plusBtn-${item.name}`);
   // 3. С помощью ссылки на элемент обрабатываем событие клика на элемент
   // deleteBtn.onclick = () => {
   //   stock.removeItem(item.name, item.quantity);
   //   li.remove();
   // }
+  plusBtn.onclick = () => {
+    stock.addItem({ ...item, quantity: 1 })
+  }
 }
 
 function deleteProductFromDom(itemName) {
@@ -242,3 +248,5 @@ function updateProductInDom(item) {
 // 2. Логика, которая понадобится для работы приложения
 // 3. Соединение логики и HTML
 // 4. Добавление стилистики
+
+// test branch to git
