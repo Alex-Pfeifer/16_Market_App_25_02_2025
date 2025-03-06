@@ -1,0 +1,20 @@
+
+body {
+    background-color: #f3f3f3ff;
+}
+
+#oneBlock {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    border: color rgb(119, 119, 233);
+    border-radius: 10%;
+    
+    
+}
+
+#button {
+     margin-left: 25%;
+     margin-right: 30%;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Market App</title>
+  </head>
+  <body>
+    <div id="oneBlock" class="container text-center mb-3"" >
+      <label for="productName" class="progress-bar" style="width: 70%" >Name of product</label>
+      <input id="productName" placeholder="Enter product name..." class="input-group mb-3 form-control style="width: 80%" 
+      type="text" 
+      />
+
+      <label for="productPrice" class="progress-bar"  style="width: 70%">Price of product</label>
+      <input
+        id="productPrice"
+        placeholder="Enter product price..." class="input-group form-control mb-3 style="width: 80%"
+        type="number" 
+      />
+
+      <label for="productQuantity" class="progress-bar" style="width: 70%">Quantity of product...</label>
+      <input
+        id="productQuantity"
+        placeholder="Enter product quantity..." class="input-group form-control mb-3 style="width: 80%"
+        type="number" 
+      />
+
+      <div id="button">
+        <button id="addProduct" onclick="addProduct()" class="btn btn-primary">Add product</button>
+        <button id="toStats" onclick="toStats()" class="btn btn-success">Show stats</button>
+      </div>
+
+    </div>
+
+    <ol id="productsList"></ol>
+    <ol id="statsList"></ol>
+
+
+  </body>
+</html>
